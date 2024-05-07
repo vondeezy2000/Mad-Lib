@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enchanted Madlibs</title>
+  <style>
+    body {
+      font-family: 'Lucida Calligraphy', cursive;
+      background-size: cover;
+      background-color: Grey;
+      background-position: center;
+      color: #333;
+      padding: 5vw;
+    }
+    
+    h1 {
+      text-align: center;
+      color: SkyBlue;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: SkyBlue;
+    }
+    
+    input[type=text], textarea {
+      width: 100%;
+    
+      margin-bottom: 20px;
+      display: inline-block;
+      border: 7px solid #ccc;
+      font-family: 'Lucida Calligraphy', cursive;
+      font-size: 16px;
+    }
+    
+    button {
+      background-color: SkyBlue;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-family: 'Lucida Calligraphy', cursive;
+      font-size: 16px;
+    }
+    
+    button:hover {
+      background-color: Black;
+    }
+    
+    #story {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Magical Madlibs</h1>
+  
+  <form id="madlibs">
+    <label for="name">Wizard Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="adjective1">Magical Adjective:</label>
+    <input type="text" id="adjective1" name="adjective1" required>
+    
+    <label for="wandname">Wand Name:</label>
+    <input type="text" id="wandname" name="wandname" required>
+    
+    <label for="verb">Mystical Action:</label>
+    <input type="text" id="verb" name="verb" required>
+    
+    <label for="adjective2">Fantastical Adjective:</label>
+    <input type="text" id="adjective2" name="adjective2" required>
+    
+    <label for="noun2">Legendary Creature:</label>
+    <textarea id="noun2" name="noun2" rows="3" required></textarea>
+    
+    <button type="button" onclick="generateStory()">Weave the Tale</button>
+  </form>
+  
+  <div id="story"></div>
+  
+  <script>
+    function generateStory() {
+      var name = document.getElementById("name").value;
+      var adjective1 = document.getElementById("adjective1").value;
+      var wandname = document.getElementById("wandname").value;
+      var verb = document.getElementById("verb").value;
+      var adjective2 = document.getElementById("adjective2").value;
+      var noun2 = document.getElementById("noun2").value;
+      
+      var story = "Once upon a time, in a land of magic and wonder, there lived a powerful wizard named " + adjective1 + " " + name + ". " +
+                  name + " possessed a magical wand called " + wandname + " that allowed them to " + verb + " with the " + adjective2 + " " + noun2 + ". " +
+                  "With their newfound powers, " + name + " embarked on a quest to bring peace and love to the Magical Kingdom.";
+      
+      document.getElementById("story").innerHTML = story;
+    }
+  </script>
+</body>
+</html>
